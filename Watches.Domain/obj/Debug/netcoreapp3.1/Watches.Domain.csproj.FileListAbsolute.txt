@@ -1,0 +1,9 @@
+C:\Users\Igor\source\repos\Watches\Watches.Domain\bin\Debug\netcoreapp3.1\Watches.Domain.deps.json
+C:\Users\Igor\source\repos\Watches\Watches.Domain\bin\Debug\netcoreapp3.1\Watches.Domain.dll
+C:\Users\Igor\source\repos\Watches\Watches.Domain\bin\Debug\netcoreapp3.1\Watches.Domain.pdb
+C:\Users\Igor\source\repos\Watches\Watches.Domain\obj\Debug\netcoreapp3.1\Watches.Domain.csprojAssemblyReference.cache
+C:\Users\Igor\source\repos\Watches\Watches.Domain\obj\Debug\netcoreapp3.1\Watches.Domain.AssemblyInfoInputs.cache
+C:\Users\Igor\source\repos\Watches\Watches.Domain\obj\Debug\netcoreapp3.1\Watches.Domain.AssemblyInfo.cs
+C:\Users\Igor\source\repos\Watches\Watches.Domain\obj\Debug\netcoreapp3.1\Watches.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Igor\source\repos\Watches\Watches.Domain\obj\Debug\netcoreapp3.1\Watches.Domain.dll
+C:\Users\Igor\source\repos\Watches\Watches.Domain\obj\Debug\netcoreapp3.1\Watches.Domain.pdb

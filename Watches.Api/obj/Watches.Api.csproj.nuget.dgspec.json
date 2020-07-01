@@ -1,0 +1,364 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Api\\Watches.Api.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Api\\Watches.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Api\\Watches.Api.csproj",
+        "projectName": "Watches.Api",
+        "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Api\\Watches.Api.csproj",
+        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Application\\Watches.Application.csproj": {
+                "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Application\\Watches.Application.csproj"
+              },
+              "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.DataAccess\\Watches.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.DataAccess\\Watches.DataAccess.csproj"
+              },
+              "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Domain\\Watches.Domain.csproj": {
+                "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Domain\\Watches.Domain.csproj"
+              },
+              "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Implementation\\Watches.Implementation.csproj": {
+                "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Implementation\\Watches.Implementation.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Application\\Watches.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Application\\Watches.Application.csproj",
+        "projectName": "Watches.Application",
+        "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Application\\Watches.Application.csproj",
+        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.DataAccess\\Watches.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.DataAccess\\Watches.DataAccess.csproj",
+        "projectName": "Watches.DataAccess",
+        "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.DataAccess\\Watches.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Domain\\Watches.Domain.csproj": {
+                "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Domain\\Watches.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Domain\\Watches.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Domain\\Watches.Domain.csproj",
+        "projectName": "Watches.Domain",
+        "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Domain\\Watches.Domain.csproj",
+        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Implementation\\Watches.Implementation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Implementation\\Watches.Implementation.csproj",
+        "projectName": "Watches.Implementation",
+        "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Implementation\\Watches.Implementation.csproj",
+        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Implementation\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Application\\Watches.Application.csproj": {
+                "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Application\\Watches.Application.csproj"
+              },
+              "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.DataAccess\\Watches.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.DataAccess\\Watches.DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.6.2, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[8.6.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
