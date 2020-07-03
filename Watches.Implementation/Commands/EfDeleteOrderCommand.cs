@@ -22,7 +22,7 @@ namespace Watches.Implementation.Commands
 
         public void Execute(int request)
         {
-            var order = _context.Products.Find(request);
+            var order = _context.Orders.Find(request);
 
             if (order == null)
             {

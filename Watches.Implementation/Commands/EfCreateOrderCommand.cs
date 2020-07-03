@@ -16,13 +16,11 @@ namespace Watches.Implementation.Commands
     {
         private readonly WatchesContext _context;
         private readonly CreateOrderValidator _validator;
-        private readonly IApplicationActor _actor;
 
-        public EfCreateOrderCommand(WatchesContext context, CreateOrderValidator validator, IApplicationActor actor)
+        public EfCreateOrderCommand(WatchesContext context, CreateOrderValidator validator)
         {
             _context = context;
             _validator = validator;
-            _actor = actor;
         }
         public int Id => 14;
 
@@ -32,11 +30,9 @@ namespace Watches.Implementation.Commands
         {
             _validator.ValidateAndThrow(dto);
 
-            var userId = _actor.Id;
-
             var order = new Order
             {
-                UserId = userId,
+                UserId = dto.Id,
                 Address = dto.Address,
                 OrderDate = dto.OrderDate
             };

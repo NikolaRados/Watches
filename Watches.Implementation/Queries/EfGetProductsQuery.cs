@@ -49,6 +49,13 @@ namespace Watches.Implementation.Queries
                     Name = x.Name,
                     Quantity = x.Quantity,
                     Price = x.Price,
+                    Comments = x.Comments.Select(co => new CommentDto
+                    {
+                        Id = co.Id,
+                        Text = co.Text,
+                        UserId = co.UserId,
+                        ProductId = co.ProductId
+                    }).ToList()
                 }).ToList()
             };
             return response;

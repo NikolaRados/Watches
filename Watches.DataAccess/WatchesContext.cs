@@ -24,7 +24,6 @@ namespace Watches.DataAccess
             modelBuilder.Entity<OrderLine>().HasQueryFilter(p => !p.IsDeleted);
             modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted);
             modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<UserUseCase>().HasQueryFilter(p => !p.IsDeleted);
         }
 
         public override int SaveChanges()
@@ -64,5 +63,6 @@ namespace Watches.DataAccess
         public DbSet<Product> Products { get; set; }
         public DbSet<UseCaseLog> UseCaseLogs { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<UserUseCase> UserUseCases { get; set; }
     } 
 }

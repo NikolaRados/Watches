@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Watches.Domain
 {
-    public class UserUseCase : Entity
+    public class UserUseCase
     {
+        public int Id { get; set; }
         public int UserId { get; set; }
         public int UseCaseId { get; set; }
 

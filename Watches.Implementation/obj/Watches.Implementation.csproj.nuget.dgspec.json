@@ -29,7 +29,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Domain\\Watches.Domain.csproj": {
+                "projectPath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Domain\\Watches.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -40,6 +44,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

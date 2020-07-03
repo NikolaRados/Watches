@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Watches.Application;
 using Watches.Application.Commands;
@@ -17,12 +20,10 @@ namespace Watches.Api.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IApplicationActor actor;
         private readonly UseCaseExecutor executor;
 
-        public ProductsController(IApplicationActor actor, UseCaseExecutor executor)
+        public ProductsController(UseCaseExecutor executor)
         {
-            this.actor = actor;
             this.executor = executor;
         }
 
@@ -45,15 +46,16 @@ namespace Watches.Api.Controllers
         {
             return Ok(executor.ExecuteQuery(query, id));
         }
-
+        [Authorize]
         // POST api/<ProductsController>
         [HttpPost]
-        public void Post([FromBody] ProductDto dto,
+        public IActionResult Post([FromBody] ProductDto dto,
             [FromServices] ICreateProductCommand command)
         {
             executor.ExecuteCommand(command, dto);
+            return NoContent();
         }
-
+        [Authorize]
         // PUT api/<ProductsController>/5
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] ProductDto dto,
@@ -62,7 +64,7 @@ namespace Watches.Api.Controllers
             executor.ExecuteCommand(command, id, dto);
             return NoContent();
         }
-
+        [Authorize]
         // DELETE api/<ProductsController>/5
         [HttpDelete("{id}")]
         public ActionResult Delete(int id,

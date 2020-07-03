@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Watches.Application;
 using Watches.Application.Commands;
@@ -13,16 +14,15 @@ using Watches.Application.Searches;
 
 namespace Watches.Api.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class BrandsController : ControllerBase
     {
-        private readonly IApplicationActor actor;
         private readonly UseCaseExecutor executor;
 
-        public BrandsController(IApplicationActor actor, UseCaseExecutor executor)
+        public BrandsController(UseCaseExecutor executor)
         {
-            this.actor = actor;
             this.executor = executor;
         }
 
@@ -41,15 +41,16 @@ namespace Watches.Api.Controllers
         {
             return Ok(executor.ExecuteQuery(query, id));
         }
-
+        [Authorize]
         // POST api/<BrandsController>
         [HttpPost]
-        public void Post([FromBody] BrandDto dto,
+        public IActionResult Post([FromBody] BrandDto dto,
             [FromServices] ICreateBrandCommand command)
         {
             executor.ExecuteCommand(command, dto);
+            return NoContent();
         }
-
+        [Authorize]
         // PUT api/<BrandsController>/5
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] BrandDto dto,
@@ -58,7 +59,7 @@ namespace Watches.Api.Controllers
             executor.ExecuteCommand(command, id, dto);
             return NoContent();
         }
-
+        [Authorize]
         // DELETE api/<BrandsController>/5
         [HttpDelete("{id}")]
         public ActionResult Delete(int id,

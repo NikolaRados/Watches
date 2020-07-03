@@ -1,21 +1,29 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using Watches.Api.Core;
 using Watches.Application;
 using Watches.Application.Commands;
+using Watches.Application.Email;
 using Watches.Application.Queries;
 using Watches.DataAccess;
 using Watches.Implementation.Commands;
+using Watches.Implementation.Email;
 using Watches.Implementation.Logging;
 using Watches.Implementation.Queries;
 using Watches.Implementation.Validators;
@@ -36,30 +44,49 @@ namespace Watches.Api
         {
             services.AddAutoMapper(this.GetType().Assembly);
             services.AddTransient<WatchesContext>();
-            services.AddTransient<IUseCaseLogger, DatabaseUseCaseLogger>();
-            services.AddTransient<IGetProductsQuery, EfGetProductsQuery>();
-            services.AddTransient<IGetOneProductQuery, EfGetOneProductQuery>();
-            services.AddTransient<IGetOneBrandQuery, EfGetOneBrandQuery>();
-            services.AddTransient<ICreateProductCommand, EfCreateProductCommand>();
-            services.AddTransient<IGetBrandsQuery, EfGetBrandsQuery>();
-            services.AddTransient<IDeleteBrandCommand, EfDeleteBrandCommand>();
-            services.AddTransient<IUpdateBrandCommand, EfUpdateBrandCommand>();
-            services.AddTransient<IDeleteProductCommand, EfDeleteDeleteProductCommand>();
-            services.AddTransient<IUpdateProductCommand, EfUpdateProductCommand>();
-            services.AddTransient<ICreateBrandCommand, EfCreateBrandCommand>();
-            services.AddTransient<IGetOrdersQuery, EfGetOrdersQuery>();
-            services.AddTransient<IGetOneOrderQuery, EfGetOneOrderQuery>();
-            services.AddTransient<ICreateOrderCommand, EfCreateOrderCommand>();
-            services.AddTransient<IDeleteOrderCommand, EfDeleteOrderCommand>();
-            services.AddTransient<IApplicationActor, AdminApiActor>();
-            services.AddTransient<CreateProductValidator>();
-            services.AddTransient<UpdateProductValidator>();
-            services.AddTransient<UpdateBrandValidator>();
-            services.AddTransient<CreateBrandValidator>();
-            services.AddTransient<CreateOrderValidator>();
-            services.AddTransient<UpdateOrderValidator>();
-            services.AddTransient<UseCaseExecutor>();
-            services.AddControllers();
+            services.AddTransient<JwtManager>();
+            services.AddHttpContextAccessor();
+
+            services.AddUseCases();
+
+            services.AddApplicationActor();
+
+            services.AddJwt();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Watches", Version = "v1" });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
+                      Enter 'Bearer' [space] and then your token in the text input below.
+                      \r\n\r\nExample: 'Bearer 12345abcdef'",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                          {
+                            Reference = new OpenApiReference
+                              {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                              },
+                              Scheme = "oauth2",
+                              Name = "Bearer",
+                              In = ParameterLocation.Header,
+
+                            },
+                            new List<string>()
+                          }
+                    });
+            });
+
         }
         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,10 +97,24 @@ namespace Watches.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(x =>
+            {
+                x.AllowAnyOrigin();
+                x.AllowAnyMethod();
+                x.AllowAnyHeader();
+            });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger");
+            });
             app.UseRouting();
 
             app.UseMiddleware<GlobalExceptionHandler>();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

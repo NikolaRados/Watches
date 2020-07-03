@@ -16,8 +16,6 @@ namespace Watches.Implementation.Validators
             _context = context;
 
             RuleFor(x => x.OrderDate)
-                .GreaterThan(DateTime.Today)
-                .WithMessage("Order day must be in future.")
                 .LessThan(DateTime.Now.AddDays(15))
                 .WithMessage("Order day can't be greater than 15 days from today.");
 

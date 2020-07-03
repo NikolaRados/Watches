@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Watches.Application.Commands
 {
-    class IDeleteOrderCommand
+    public interface IDeleteOrderCommand : ICommand<int>
     {
     }
 }

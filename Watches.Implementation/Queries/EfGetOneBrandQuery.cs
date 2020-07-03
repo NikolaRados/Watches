@@ -13,17 +13,15 @@ namespace Watches.Implementation.Queries
     public class EfGetOneBrandQuery : IGetOneBrandQuery
     {
         private readonly WatchesContext _context;
-        private readonly IMapper _mapper;
 
-        public EfGetOneBrandQuery(WatchesContext context, IMapper mapper)
+        public EfGetOneBrandQuery(WatchesContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
 
         public int Id => 10;
 
-        public string Name => "Search one brand with Id";
+        public string Name => "Search Brands with Id";
 
         public BrandDto Execute(int id)
         {

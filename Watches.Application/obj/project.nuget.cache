@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+O4AIrSABPBdM67qmxYJW19eF2D99NKNv6SqzhNxBuV9hVdri8xYjouTyEchNW0C5JbGur5Xa0FTAA8jdIL3gQ==",
+  "dgSpecHash": "FRYe9+4DF8NNG4VG4LVJtal4/dWqxGu7D7RqfDnoNG4QX7VzeqhTLKDYSWRsiTflFdWZBpo548KuZP1527dvqw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Igor\\source\\repos\\Watches\\Watches.Application\\Watches.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Igor\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.5\\microsoft.aspnetcore.http.features.3.1.5.nupkg.sha512",
+    "C:\\Users\\Igor\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.5\\microsoft.extensions.primitives.3.1.5.nupkg.sha512",
+    "C:\\Users\\Igor\\.nuget\\packages\\system.io.pipelines\\4.7.1\\system.io.pipelines.4.7.1.nupkg.sha512"
+  ],
   "logs": []
 }

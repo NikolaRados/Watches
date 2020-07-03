@@ -12,7 +12,7 @@ namespace Watches.Domain
         public string Password { get; set; }
         public string Email { get; set; }
 
-        public virtual ICollection<UserUseCase> UserUseCases { get; set; }
+        public virtual ICollection<UserUseCase> UserUseCases { get; set; } 
         public virtual ICollection<Order> Orders { get; set; } = new HashSet<Order>();
         public virtual ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
     }

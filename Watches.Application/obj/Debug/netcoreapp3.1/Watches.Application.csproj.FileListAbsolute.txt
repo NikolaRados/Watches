@@ -4,6 +4,9 @@ C:\Users\Igor\source\repos\Watches\Watches.Application\bin\Debug\netcoreapp3.1\W
 C:\Users\Igor\source\repos\Watches\Watches.Application\obj\Debug\netcoreapp3.1\Watches.Application.csprojAssemblyReference.cache
 C:\Users\Igor\source\repos\Watches\Watches.Application\obj\Debug\netcoreapp3.1\Watches.Application.AssemblyInfoInputs.cache
 C:\Users\Igor\source\repos\Watches\Watches.Application\obj\Debug\netcoreapp3.1\Watches.Application.AssemblyInfo.cs
-C:\Users\Igor\source\repos\Watches\Watches.Application\obj\Debug\netcoreapp3.1\Watches.Application.csproj.CoreCompileInputs.cache
 C:\Users\Igor\source\repos\Watches\Watches.Application\obj\Debug\netcoreapp3.1\Watches.Application.dll
 C:\Users\Igor\source\repos\Watches\Watches.Application\obj\Debug\netcoreapp3.1\Watches.Application.pdb
+C:\Users\Igor\source\repos\Watches\Watches.Application\obj\Debug\netcoreapp3.1\Watches.Application.csproj.CoreCompileInputs.cache
+C:\Users\Igor\source\repos\Watches\Watches.Application\bin\Debug\netcoreapp3.1\Watches.Domain.dll
+C:\Users\Igor\source\repos\Watches\Watches.Application\bin\Debug\netcoreapp3.1\Watches.Domain.pdb
+C:\Users\Igor\source\repos\Watches\Watches.Application\obj\Debug\netcoreapp3.1\Watches.Application.csproj.CopyComplete

@@ -43,16 +43,26 @@ namespace Watches.Implementation.Commands
 
             _validator.ValidateAndThrow(dto);
 
+            foreach(var or in order.OrderLines)
+            {
+                var pr = _context.Products.Find(or.ProductId);
+                var stari = order.OrderLines.FirstOrDefault(x => x.ProductId == or.ProductId);
+                pr.Quantity += stari.Quantity;
+                or.IsActive = false;
+                or.IsDeleted = true;
+                or.DeletedAt = DateTime.Now;
+            }
+
 
             order.Address = dto.Address;
             order.OrderDate = dto.OrderDate;
+
 
             foreach (var item in dto.Items)
             {
                 var product = _context.Products.Find(item.ProductId);
 
-                var stari = order.OrderLines.FirstOrDefault(x => x.ProductId == item.ProductId);
-                product.Quantity += stari.Quantity;
+                
                 product.Quantity -= item.Quantity;
 
                 order.OrderLines.Add(new OrderLine

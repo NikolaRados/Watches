@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Watches.Application;
 using Watches.Application.Commands;
@@ -13,6 +14,7 @@ using Watches.Application.Searches;
 
 namespace Watches.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class OrdersController : ControllerBase
@@ -27,25 +29,28 @@ namespace Watches.Api.Controllers
         }
         // GET: api/<OrdersController>
         [HttpGet]
+        public IActionResult Get([FromBody] OrderSearch search,
+            [FromServices] IGetOrdersQuery query)
+        {
+            return Ok(executor.ExecuteQuery(query, search));
+        }
+
+        // GET api/<OrdersController>/5
+        [HttpGet("{id}")]
         public IActionResult Get(int id,
             [FromServices] IGetOneOrderQuery query)
         {
             return Ok(executor.ExecuteQuery(query, id));
         }
 
-        // GET api/<OrdersController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST api/<OrdersController>
         [HttpPost]
-        public void Post([FromBody] CreateOrderDto dto,
+        public IActionResult Post([FromBody] CreateOrderDto dto,
             [FromServices] ICreateOrderCommand command)
         {
+            dto.Id = actor.Id;
             executor.ExecuteCommand(command, dto);
+            return NoContent();
         }
 
         // PUT api/<OrdersController>/5

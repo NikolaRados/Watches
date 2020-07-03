@@ -318,21 +318,6 @@ namespace Watches.DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("UseCaseId")
                         .HasColumnType("int");
 
@@ -343,7 +328,7 @@ namespace Watches.DataAccess.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserUseCase");
+                    b.ToTable("UserUseCases");
                 });
 
             modelBuilder.Entity("Watches.Domain.Comment", b =>
