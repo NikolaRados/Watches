@@ -1,11 +1,13 @@
 ﻿using FluentValidation;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Watches.Application.Commands;
 using Watches.Application.DataTransfer;
 using Watches.Application.Email;
 using Watches.DataAccess;
+using Watches.Domain;
 using Watches.Implementation.Validators;
 
 namespace Watches.Implementation.Commands
@@ -36,18 +38,34 @@ namespace Watches.Implementation.Commands
             
             _validator.ValidateAndThrow(request);
 
-            _context.Users.Add(new Domain.User
+            var user = new User
             {
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 Username = request.Username,
                 Password = request.Password,
                 Email = request.Email
-            });
+            };
 
             
 
+            _context.Users.Add(user);
             _context.SaveChanges();
+
+            var a = _context.Users.Where(x => x.Username == request.Username).FirstOrDefault();
+
+            var permits = new List<int> { 4, 10, 16, 18, 8, 1, 17, 14, 15, 19, 21};
+
+            foreach (var permit in permits)
+            {
+            _context.UserUseCases.Add(new UserUseCase
+            {
+                UserId = a.Id,
+                UseCaseId = permit
+            }) ;
+            }
+
+                _context.SaveChanges();
 
             _sender.Send(new SendEmailDto
             {
